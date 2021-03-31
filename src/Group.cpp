@@ -391,7 +391,8 @@ void Group::onDraw(cairo_t* cr)
 	{
 	case 0: //Bars -------------------------------------------------------------
 	{
-		const float BAR_WEIGHT = 0.9231;
+		// const float BAR_WEIGHT = 0.9231;
+		const float BAR_WEIGHT = (float) Settings::barSize / 100 + 0.9;
 
 		if (mSOpened)
 		{

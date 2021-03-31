@@ -21,6 +21,7 @@ namespace Settings
 	State<int> indicatorOrientation;
 	State<int> indicatorStyle;
 	State<GdkRGBA*> indicatorColor;
+	State<int> barSize;
 
 	State<bool> keyComboActive;
 	State<bool> keyAloneActive;
@@ -86,6 +87,14 @@ namespace Settings
 		indicatorColor.setup(color,
 			[](GdkRGBA* indicatorColor) -> void {
 				g_key_file_set_string(mFile, "user", "indicatorColor", gdk_rgba_to_string(indicatorColor));
+				saveFile();
+
+				Dock::redraw();
+			});
+
+		barSize.setup(g_key_file_get_integer(mFile, "user", "barSize", NULL),
+			[](int barSize) -> void {
+				g_key_file_set_integer(mFile, "user", "barSize", barSize);
 				saveFile();
 
 				Dock::redraw();

@@ -17,6 +17,7 @@
 #include "GroupMenu.hpp"
 #include "GroupWindow.hpp"
 #include "Helpers.hpp"
+#include "Settings.hpp"
 #include "State.tpp"
 
 class GroupWindow;

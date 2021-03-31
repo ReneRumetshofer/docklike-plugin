@@ -262,6 +262,50 @@
 												<property name="top_attach">3</property>
 											</packing>
 										</child>
+
+										<child>
+											<object class="GtkLabel">
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<property name="halign">start</property>
+												<property name="label" translatable="yes">Bar size :</property>
+											</object>
+											<packing>
+												<property name="left_attach">0</property>
+												<property name="top_attach">4</property>
+											</packing>
+										</child>
+										<child>
+											<object class="GtkComboBoxText" id="co_barSize">
+												<property name="visible">True</property>
+												<property name="can_focus">False</property>
+												<items>
+													<!-- <item translatable="no">0.90</item>
+													<item translatable="no">0.91</item>
+													<item translatable="no">0.92</item>
+													<item translatable="no">0.9251</item>
+													<item translatable="no">0.93</item>
+													<item translatable="no">0.94</item>
+													<item translatable="no">0.95</item>
+													<item translatable="no">0.96</item>
+													<item translatable="no">0.97</item>
+													<item translatable="no">0.98</item> -->
+													<item translatable="no">90</item>
+													<item translatable="no">91</item>
+													<item translatable="no">92</item>
+													<item translatable="no">93</item>
+													<item translatable="no">94</item>
+													<item translatable="no">95</item>
+													<item translatable="no">96</item>
+													<item translatable="no">97</item>
+													<item translatable="no">98</item>
+												</items>
+											</object>
+											<packing>
+												<property name="left_attach">1</property>
+												<property name="top_attach">4</property>
+											</packing>
+										</child>
 									</object>
 								</child>
 							</object>

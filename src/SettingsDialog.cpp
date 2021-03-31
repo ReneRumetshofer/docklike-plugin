@@ -109,6 +109,7 @@ namespace SettingsDialog
 		gtk_combo_box_set_active(GTK_COMBO_BOX(indicatorStyle), Settings::indicatorStyle);
 		g_signal_connect(indicatorStyle, "changed",
 			G_CALLBACK(+[](GtkComboBox* indicatorStyle, GtkWidget* g) {
+				
 				Settings::indicatorStyle.set(gtk_combo_box_get_active(GTK_COMBO_BOX(indicatorStyle)));
 			}),
 			dialog);
@@ -149,6 +150,16 @@ namespace SettingsDialog
 				gtk_widget_set_sensitive(GTK_WIDGET(iconSize), Settings::forceIconSize);
 			}),
 			iconSize);
+
+		// =====================================================================
+
+		GObject* barSize = gtk_builder_get_object(builder, "co_barSize");
+		gtk_combo_box_set_active(GTK_COMBO_BOX(barSize), Settings::barSize);
+		g_signal_connect(barSize, "changed",
+			G_CALLBACK(+[](GtkComboBox* barSize, GtkWidget* g) {
+				Settings::barSize.set(gtk_combo_box_get_active(GTK_COMBO_BOX(barSize)));
+			}),
+			dialog);
 
 		// =====================================================================
 
