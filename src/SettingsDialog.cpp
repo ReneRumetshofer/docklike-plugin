@@ -109,8 +109,13 @@ namespace SettingsDialog
 		gtk_combo_box_set_active(GTK_COMBO_BOX(indicatorStyle), Settings::indicatorStyle);
 		g_signal_connect(indicatorStyle, "changed",
 			G_CALLBACK(+[](GtkComboBox* indicatorStyle, GtkWidget* g) {
-				
 				Settings::indicatorStyle.set(gtk_combo_box_get_active(GTK_COMBO_BOX(indicatorStyle)));
+
+				// Here
+				// GtkEntry* entry = GTK_ENTRY(gtk_bin_get_child(GTK_BIN(iconSize)));
+				// std::string value = Help::String::numericOnly(gtk_entry_get_text(entry));
+				// gtk_entry_set_text(entry, value.c_str());
+				// Settings::iconSize.set(std::stoi("0" + value));
 			}),
 			dialog);
 
